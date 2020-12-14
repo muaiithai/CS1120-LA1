@@ -1,0 +1,80 @@
+ProcessList Pseudocode:
+
+    # Fields: number_of_rows, number_of_columns, random_numbers_list[], 
+    # adjacent_sums_list[]
+
+    # Constructor: 
+        #Initialize fields number_of_rows, number_of_columns (with values
+        # from parameters)
+
+        # Create emptyrandom_numbers_list[] using nested loops, with the outer loop
+        # looping number_of_rows times and inner loop running number_of_columns
+        # and make every element equal to zero as you loop
+
+        # Create empty adjacent_sums_list[] using nested loops, with the outer 
+        # loop looping number_of_rows times and inner loop running 
+        # number_of_columns and make every element equal to zero as you loop
+
+    # Methods: ---------------------------------------------------------------------
+    # Method set_number_of_rows: mutator for number of rows
+
+    # Method get_number_of_rows: accessor for number of rows
+        # Return number_of_row
+
+    # Method set_number_of_columns: mutator for number of columns
+
+    # Method get_number_of_columns: accessor for number of columns
+        # Return number_of_columns
+
+    # Method randomlyFillList: fill random_numbers_list with random numbers
+        # for loop that loops over the rand list's rows
+            # for loop that loops over the elements of each row
+                # setting the value in the element of the original rand list 
+                # using its index to a random integer that's between 0 and 15 inclusive
+
+    # Method get_rand_list: accessor for random_numbers_list
+        # Return random_numbers_list
+
+    # Method computeListValues: computes the adjacent sum values and stores them
+    #                           in adjacent_sums_list
+        # for loop that loops over the list's rows
+            # for loop that loops over the elements of each row
+                # we test for edge cases to avoid index out of bounds error 
+                # then add the valid adjacent values
+                # if the index of the column is not zero
+                    # accumulate the number to the left of the element in the 
+                    # random list onto current element
+                # if the index of the row is not zero
+                    # accumulate the number above of the element in the 
+                    # random list onto current element
+                # if the index of the column is not equal to (number_of_columns - 1)
+                    # accumulate the number to the right of the element in the 
+                    # random list onto current element
+                # if the index of the row is not equal to (number_of_rows - 1)
+                    # accumulate the number below of the element in the 
+                    # random list onto current element
+                # if the index of the row is not zero AND index of the column is not zero
+                    # accumulate the number to the upper left of the element in the 
+                    # random list onto current element
+                # if the index of the row is not zero
+                # AND index of the column is not equal to (number_of_columns - 1)
+                    # accumulate the number to the lower left of the element in the 
+                    # random list onto current element
+                # if the index of the row is not equal to (number_of_rows - 1)
+                # AND index of the column is not zero
+                    # accumulate the number to the upper right of the element in the 
+                    # random list onto current element
+                # if the index of the row is not equal to (number_of_rows – 1)
+                # AND index of the column is not equal to (number_of_columns - 1)
+                    # accumulate the number to the lower right of the element in the 
+                    # random list onto current element
+
+    # Method get_adj_sum_list: accessor for the computed list
+        # Return adjacent_sums_list
+
+    # Method printList: takes any 2-D list as a paramater and 
+    #                   then prints it in a well-formatted way
+        # for loop that loops over the list's rows
+            # for loop that loops over the elements of each row
+                # formatted printing of each element
+            # breaking the line before proceeding to next row
