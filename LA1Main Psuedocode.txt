@@ -1,0 +1,29 @@
+LA1Main Pseudocode:
+
+    # Constructor: contains the main function so the program runs when an 
+    #              instance of LA1Main is created
+        
+        # take user input for rows using helper input function to make sure input is valid
+        # we loop over the input for columns until user inputs a value different from the rows value
+            # prompt is displayed to user if they input the same number as for rows
+        # instance of ProcessList is created and valid values of rows and columns are passed to it
+        # we call randomlyFillList using the instance we created to fill its respective list
+        # we call computeListValues using the instance we created to fill its respective list
+        # header line to indicate which list is being printed is output
+        # ProcessList's printList function is called, and using an accessor, we pass the process instance's rand list
+        # header line to indicate which list is being printed is output
+        # ProcessList's printList function is called, using an accessor, we pass the process instance's computed list
+
+
+    # Methods: ------------------------------------------------------------------------------------------------------
+    # Method input_valid_dim: Helper function that validates the input values, 
+    #               takes a string as an argument to perform the related checks
+        # Do-While loop
+            # different input prompt is displayed for the different input arguments
+            # try to cast the input as an int
+                # if successful, we check if it's within the valid range
+                    # if valid, the function returns it
+                # an exception is thrown and a message is displayed to inform the user of their error
+
+
+# create an instance of LA1Main to run the program
